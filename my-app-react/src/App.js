@@ -2,12 +2,13 @@ import React from 'react'
 import { HelloWorld } from "./Hello";
 import { Welcome } from './Welcome';
 
+
 export class App extends React.Component{
     render(){
         return (
             <div>
                 < HelloWorld />
-                < Welcome name="" age="200"/>
+                < Welcome name={[<strong>Sean</strong>]} age="200"/>
             </div>
         )
 
