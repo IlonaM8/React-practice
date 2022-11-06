@@ -5,7 +5,7 @@ import React from 'react'
          return (
             <div>
                 <h1>Hello, World!</h1>
-                <p>What a beautiful day!</p>
+                <Message />
             </div>
          )
          
@@ -13,3 +13,10 @@ import React from 'react'
      }
  }
  
+
+ export class Message extends React.Component{
+    render(){
+        return <p>What a beautiful day!</p>
+    }
+ }
+
