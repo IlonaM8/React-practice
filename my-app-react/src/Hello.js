@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { Message } from './Message';
  export class HelloWorld extends React.Component {
      render(){
          return (
@@ -13,10 +13,4 @@ import React from 'react'
      }
  }
  
-
- export class Message extends React.Component{
-    render(){
-        return <p>What a beautiful day!</p>
-    }
- }
 
