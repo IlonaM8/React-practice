@@ -12,7 +12,7 @@ export class App extends React.Component{
                 < HelloWorld />
                 < Welcome name="John" />
                 <Clock />
-                < Counter />
+                < Counter initialValue={10} timeout={1000}  incrementBy={10}/>
                 
 
             </div>
