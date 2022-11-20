@@ -6,7 +6,7 @@ export class Welcome extends React.Component {
     render(){
         return (
         <div>
-            <p>Hello, {this.props.name || 'User'}</p>    
+            <p>Hello, {this.props.name}</p>    
             <Age age={22} />
         </div> 
         )
@@ -15,3 +15,5 @@ export class Welcome extends React.Component {
 
 }
 
+//default Props
+Welcome.defaultProps = { name : 'User'}
