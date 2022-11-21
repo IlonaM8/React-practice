@@ -6,22 +6,16 @@ export class Counter extends React.Component{
     state = { 
        count: this.props.initialValue ?? 0
      }
-    
-    constructor(props){
-        super(props)
+     
+     //Risposta: il constructor non è pià richiesto
+    // constructor(props){
+    //     super(props)
+            
 
-        
-    setInterval(()=>{
-        this.setState((state)=>{
-            return{
-                count: state.count + (this.props.incrementBy ?? 1)
-            }
-        })
+    // }
 
-    },  this.props.timeout ?? 1000)
-      
 
-    }
+
     render(){
         return(
             <div>
@@ -29,7 +23,26 @@ export class Counter extends React.Component{
             </div>
         )
     }
+
+
+    componentDidMount(){
+        setInterval(()=>{
+            this.setState((state)=>{
+                return{
+                    count: state.count + (this.props.incrementBy ?? 1)
+                }
+            })
+
+        },  this.props.timeout ?? 1000)
+
+    }
 }
+
+
+
+
+
+
 
 //defalut
 /*
@@ -38,3 +51,4 @@ Counter.defaultProps = {
     incrementBy : 1,
     initialValue : 0
 } */
+
