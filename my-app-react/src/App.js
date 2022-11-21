@@ -5,15 +5,33 @@ import { HelloWorld } from "./Hello";
 import { Welcome } from './Welcome';
 
 
+
 export class App extends React.Component{
+   constructor(props){
+    super(props)
+
+    this.state = {
+        incrementBy: 10,
+    }
+   }
+   
+   //esercizio 1:1
+   myFun(){
+    console.log('ciao', this)
+    this.setState({ incrementBy: this.state.incrementBy + 1})
+    
+   }
+
+
     render(){
         return (
             <div>
                 < HelloWorld />
                 < Welcome name="John" />
                 <Clock />
-                < Counter initialValue={10} timeout={1000}  incrementBy={10}/>
-                
+                <button onClick={this.myFun.bind(this)}>Click me</button>
+                < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/>
+               
 
             </div>
         )
