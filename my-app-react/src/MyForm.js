@@ -4,24 +4,47 @@ export class MyForm extends React.Component{
     //initialize the state with username property with an empty string
     state = { 
         username: '',
-        password: ''
+        password: '',
+        remember: false
     }
 
     //event handeler for input
     handleInputChange = (event) => {
         const value = event.target.value  //receves an event, we can get the target (the html dom node) - we can access the value of the target.
+        const name = event.target.name //extract the name from the target
+        //extract also tyepe and checked
+        const type = event.target.type
+        const checked = event.target.checked
+
         this.setState({
-            username: value
+            // [name]: value, //update username or password depending on the event
+
+            [name]: type === 'checkbox' ? checked : value, //if the type is checkbox - use checked to update state - else use value to update state!
         })
     }
 
-    //event handler for password
-    handlePasswordChange = (event) =>{
-        const value = event.target.value
-        this.setState({
-            password: value
-        })
-    }
+    //event handler for password - use only one event handler
+    // handlePasswordChange = (event) =>{
+    //     const value = event.target.value
+    //     this.setState({
+    //         password: value
+    //     })
+    // }
+
+
+    //event handler for checkbox
+    // handleCheckboxChange = (event) =>{
+    //     const name = event.target.name
+    //     const checked = event.target.checked
+
+    //     this.setState( {
+    //         [name]: checked
+            
+    //     })
+
+    // }
+
+
 
 
     render(){
@@ -37,8 +60,15 @@ export class MyForm extends React.Component{
                  name="password"
                  type="password"
                  value={this.state.password}
-                 onChange={this.handlePasswordChange}
+                 onChange={this.handleInputChange} //use only one event handler
                  />
+
+                 <input 
+                 name="remember"  // input checkbox
+                 type="checkbox"
+                 //checked prop expect true or false
+                 checked={this.state.remember}
+                 onChange={this.handleInputChange}/> 
             </div>
         )
     }

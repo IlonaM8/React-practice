@@ -7,6 +7,7 @@ import { ClickCounter } from './ClickCounter';
 import { ClickTracker } from './ClickTracker';
 import { InteractiveWelcome } from './InteractiveWelcome';
 import { MyForm } from './MyForm';
+import { Login } from './Login';
 
 
 
@@ -39,6 +40,7 @@ export class App extends React.Component{
                 <ClickTracker/>
                 <InteractiveWelcome />
                 <MyForm />
+                <Login />
                
 
             </div>
