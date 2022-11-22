@@ -4,6 +4,7 @@ import { Counter } from './Counter';
 import { HelloWorld } from "./Hello";
 import { Welcome } from './Welcome';
 import { ClickCounter } from './ClickCounter';
+import { ClickTracker } from './ClickTracker';
 
 
 
@@ -33,6 +34,7 @@ export class App extends React.Component{
                 <button onClick={this.myFun.bind(this)}>Click me</button>
                 < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/>
                 <ClickCounter />
+                <ClickTracker/>
                
 
             </div>
