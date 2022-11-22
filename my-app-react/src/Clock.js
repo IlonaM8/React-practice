@@ -15,11 +15,7 @@ export class Clock extends React.Component{
            date : new Date()
         }
 
-        setInterval(()=>{
-            this.setState({
-                date: new Date(),
-            })
-        }, 1000)
+        
 
     }
     render(){
@@ -28,6 +24,19 @@ export class Clock extends React.Component{
              <h1>The time is: {this.state.date.toLocaleTimeString()}</h1>
             </div>
         )
+    }
+
+    componentDidMount(){
+        const oneSecond = 1000;
+        this.intervalID = setInterval(()=>{
+            this.setState({
+                date: new Date(),
+            })
+        }, oneSecond);
+    }
+
+    componentWillUnmount(){
+        clearInterval(this.intervalID)
     }
 }
 

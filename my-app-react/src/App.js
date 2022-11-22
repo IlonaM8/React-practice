@@ -1,10 +1,12 @@
 import React from 'react'
-import { Clock } from './Clock';
-import { Counter } from './Counter';
+// import { Clock } from './Clock';
+// import { Counter } from './Counter';
 import { HelloWorld } from "./Hello";
 import { Welcome } from './Welcome';
 import { ClickCounter } from './ClickCounter';
 import { ClickTracker } from './ClickTracker';
+import { InteractiveWelcome } from './InteractiveWelcome';
+import { MyForm } from './MyForm';
 
 
 
@@ -30,11 +32,13 @@ export class App extends React.Component{
             <div>
                 < HelloWorld />
                 < Welcome name="John" />
-                <Clock />
-                <button onClick={this.myFun.bind(this)}>Click me</button>
-                < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/>
+                {/* <Clock /> */}
+                {/* <button onClick={this.myFun.bind(this)}>Click me</button> */}
+                {/* < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/> */}
                 <ClickCounter />
                 <ClickTracker/>
+                <InteractiveWelcome />
+                <MyForm />
                
 
             </div>
