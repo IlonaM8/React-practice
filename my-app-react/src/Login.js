@@ -32,32 +32,16 @@ export class Login extends React.Component{
     // }
 
 
-    //this is not working 
-    onLogin = (username, password, remember) =>{
-       console.log({
-        username,
-        password, 
-        remember }
-        )
-
+     onLogin = () =>{
+        console.log(this.state) 
     }
-
-
-    //TO DO: When clicked, the event handler attached to the button should call an onLogin function passed as a prop to the Login component, passing it the state.
-   // not working
-    handleButtonClick = ()=>{
-        this.props.onLogin(this.state.username, this.state.password, this.state.remember)
-    }
-
-   
-
 
     render(){
         return(
             <div>
                 <h3>Here is the Login</h3>
                 <div>
-                    <button type="button" disabled={this.state.disabled} onClick={this.handleButtonClick}>Login</button>
+                    <button type="button" disabled={this.state.disabled} onClick={this.onLogin}>Login</button>
                 </div>
                 <input 
                     name="username" 
