@@ -8,6 +8,8 @@ import { ClickTracker } from './ClickTracker';
 import { InteractiveWelcome } from './InteractiveWelcome';
 import { MyForm } from './MyForm';
 import { Login } from './Login';
+import { UncontrolledForm } from './UncontrolledForm';
+import { UncontrolledLogin } from './UncontrolledLogin';
 
 
 
@@ -41,6 +43,8 @@ export class App extends React.Component{
                 <InteractiveWelcome />
                 <MyForm />
                 <Login />
+                <UncontrolledForm />
+                <UncontrolledLogin />
                
 
             </div>
