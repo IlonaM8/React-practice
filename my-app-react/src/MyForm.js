@@ -44,31 +44,61 @@ export class MyForm extends React.Component{
 
     // }
 
+    handleResetState = () => {
+        this.setState({
+            username: '', 
+            password: '', 
+            remember: false,
+        })
 
+    }
+
+    handlePrefillForm = () =>{
+        //date returned form a server
+        this.setState({
+            username: 'Billy',
+            password: 'hello',
+            remember: true,
+        })
+    }
+
+
+    componentDidUpdate(){
+        console.log(this.state) //print my current state in the console
+    }
 
 
     render(){
         return(
             <div>
                 <h1>My Form</h1>
-                <input
-                    name="username"
-                    value={this.state.username} //associate the value of the state with the value in the input
-                    onChange={this.handleInputChange} //is called everytime the user type in the input
-                />
-                <input
-                 name="password"
-                 type="password"
-                 value={this.state.password}
-                 onChange={this.handleInputChange} //use only one event handler
-                 />
 
-                 <input 
-                 name="remember"  // input checkbox
-                 type="checkbox"
-                 //checked prop expect true or false
-                 checked={this.state.remember}
-                 onChange={this.handleInputChange}/> 
+                <div>
+                    <button onClick={this.handleResetState}>Reset</button>
+                    <button onClick={this.handlePrefillForm}>PrefillForm</button>
+                </div>
+
+                <div>
+                        <input
+                            name="username"
+                            value={this.state.username} //associate the value of the state with the value in the input
+                            onChange={this.handleInputChange} //is called everytime the user type in the input
+                        />
+                        <input
+                        name="password"
+                        type="password"
+                        value={this.state.password}
+                        onChange={this.handleInputChange} //use only one event handler
+                        />
+
+                        <input 
+                        name="remember"  // input checkbox
+                        type="checkbox"
+                        //checked prop expect true or false
+                        checked={this.state.remember}
+                        onChange={this.handleInputChange}/> 
+                </div>
+                
             </div>
         )
     }

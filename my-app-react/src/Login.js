@@ -4,7 +4,8 @@ export class Login extends React.Component{
     state = {
         username: '',
         password: '', 
-        remember: false
+        remember: false,
+        disabled: true
     }
 
     handleInputChange = (event) =>{
@@ -15,6 +16,7 @@ export class Login extends React.Component{
         this.setState( {
             // [name]: value
             [name]: type === "checkbox" ? checked : value, 
+            disabled: false
         })
 
     }
@@ -28,10 +30,35 @@ export class Login extends React.Component{
     //         [name]: checked
     //     })
     // }
+
+
+    //this is not working 
+    onLogin = (username, password, remember) =>{
+       console.log({
+        username,
+        password, 
+        remember }
+        )
+
+    }
+
+
+    //TO DO: When clicked, the event handler attached to the button should call an onLogin function passed as a prop to the Login component, passing it the state.
+   // not working
+    handleButtonClick = ()=>{
+        this.props.onLogin(this.state.username, this.state.password, this.state.remember)
+    }
+
+   
+
+
     render(){
         return(
             <div>
                 <h3>Here is the Login</h3>
+                <div>
+                    <button type="button" disabled={this.state.disabled} onClick={this.handleButtonClick}>Login</button>
+                </div>
                 <input 
                     name="username" 
                     value={this.state.username} 
