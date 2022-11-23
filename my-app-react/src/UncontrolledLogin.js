@@ -33,7 +33,7 @@ export class UncontrolledLogin extends React.Component{
             <div>
                 <h2>Here is the Uncontrolled Form for exercise forms-05</h2>
                 <form ref={this._formRef}  onSubmit={this.handleFormSubmit}>
-                    <input name="username" defaultValue="User" />
+                    <input name="username" defaultValue="User" autoFocus/>
                     <input name="password" type="password"/>
                     <input name="remember" type="checkbox" />
 
