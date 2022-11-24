@@ -20,10 +20,9 @@ export class TodoList extends React.Component{
 
    //button: add item on Click
    handlePushItems = (event) =>{
-    const value = event.target.value
-    const name = event.target.name
     this.setState({
-        [name]: value
+        input: '', 
+        
     })
       this.props.items.push(this.state.input)
       console.log(this.props.items)
@@ -37,6 +36,18 @@ export class TodoList extends React.Component{
     })
 
 }
+
+//button clears the items array when clicked
+handleRemoveItems = () =>{
+    this.setState({
+        input: '', 
+        
+    }) 
+    this.props.items.pop(this.state.input)
+      console.log(this.props.items)
+
+}
+
 
 
     render(){
@@ -57,6 +68,10 @@ export class TodoList extends React.Component{
 
                 <button 
                      onClick={this.handleResetState}>Reset
+                </button>
+
+                <button 
+                     onClick={this.handleRemoveItems}>Remove Items 
                 </button>
             </div>
         )
