@@ -28,7 +28,15 @@ export class TodoList extends React.Component{
       this.props.items.push(this.state.input)
       console.log(this.props.items)
    }
- 
+    
+  //reset button to clear input
+   handleResetState = () => {
+    this.setState({
+        input: '', 
+        
+    })
+
+}
 
 
     render(){
@@ -44,7 +52,12 @@ export class TodoList extends React.Component{
                        onChange={this. handleItemsToList}/>
                 <button 
                     type="button"
-                       onClick={this.handlePushItems}>Add item to the list</button>
+                    onClick={this.handlePushItems}>Add item to the list
+                </button>
+
+                <button 
+                     onClick={this.handleResetState}>Reset
+                </button>
             </div>
         )
     }
