@@ -10,6 +10,19 @@ import { MyForm } from './MyForm';
 import { Login } from './Login';
 import { UncontrolledForm } from './UncontrolledForm';
 import { UncontrolledLogin } from './UncontrolledLogin';
+import { MyList } from './MyList';
+import { MyTodos } from './MyTodos';
+import { TodoList } from './TodoList';
+
+
+const todos = [
+    {id: 1, title: "Buy Milk", completed: true}, 
+    {id: 2, title: "Stare at the wall", completed: false}, 
+    {id: 3, title: "Buy Bread", completed: true}, 
+    {id: 4, title: "Sleep", completed: false}, 
+]
+
+
 
 
 
@@ -45,6 +58,9 @@ export class App extends React.Component{
                 <Login />
                 <UncontrolledForm />
                 <UncontrolledLogin />
+                <MyList names={['Billy', 'Kate', 'Jane']} />
+                <MyTodos todos={todos}  />
+                <TodoList items={['Sleep', 'Eat', 'Walk the cat', 'Workout', 'Code', 'Study React']} />
                
 
             </div>
