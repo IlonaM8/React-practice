@@ -20,10 +20,9 @@ export class TodoList extends React.Component{
 
    //button: add item on Click
    handlePushItems = (event) =>{
-    const value = event.target.value
-    const name = event.target.name
     this.setState({
-        [name]: value
+        input: '', 
+        
     })
       this.props.items.push(this.state.input)
       console.log(this.props.items)
