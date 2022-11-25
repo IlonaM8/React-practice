@@ -1,6 +1,5 @@
 import React from 'react'
 import { Age } from './Age'
-import './index.css'
 
 
 

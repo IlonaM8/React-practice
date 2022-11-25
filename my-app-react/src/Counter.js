@@ -17,8 +17,18 @@ export class Counter extends React.Component{
 
 
     render(){
+     // write here the style object then pass it as a prop
+
+     const myInlineStyle = {
+        backgroundColor: '#fff', 
+        margin: '2px', 
+        color: 'green',
+        padding: '20px'
+     }
+
         return(
-            <div>
+            <div style={myInlineStyle}>
+                <h4>Hello, here I use inline style</h4>
             <CounterDisplay count={this.state.count} /> 
             </div>
         )
