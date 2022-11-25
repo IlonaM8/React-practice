@@ -1,0 +1,11 @@
+.container {
+    background-color: rgb(210, 249, 172);
+    border: 2px solid pink;
+    padding: 40px;
+}
+
+.welcome {
+    background-color: rgb(167, 251, 136);
+    border: 1px rgb(246, 150, 166) solid;
+    padding: 20px;
+}
