@@ -13,6 +13,7 @@ import { UncontrolledLogin } from './UncontrolledLogin';
 import { MyList } from './MyList';
 import { MyTodos } from './MyTodos';
 import { TodoList } from './TodoList';
+import { TodoListpractice } from './TodoListpractice';
 
 
 const todos = [
@@ -61,6 +62,7 @@ export class App extends React.Component{
                 <MyList names={['Billy', 'Kate', 'Jane']} />
                 <MyTodos todos={todos}  />
                 <TodoList items={['Sleep', 'Eat', 'Walk the cat', 'Workout', 'Code', 'Study React']} />
+                <TodoListpractice />
                
 
             </div>

@@ -47,8 +47,7 @@ handleRemoveItems = () =>{
       console.log(this.props.items)
 
 }
-
-
+ 
 
     render(){
         const items = this.props.items.map((item, index )=> <li key={item + index}>{item}</li>)
@@ -60,7 +59,7 @@ handleRemoveItems = () =>{
                 <input name="input" 
                        type="text"
                        value={this.state.input}
-                       onChange={this. handleItemsToList}/>
+                       onChange={this.handleItemsToList}/>
                 <button 
                     type="button"
                     onClick={this.handlePushItems}>Add item to the list
@@ -71,7 +70,7 @@ handleRemoveItems = () =>{
                 </button>
 
                 <button 
-                     onClick={this.handleRemoveItems}>Remove Items 
+                     onClick={this.handleRemoveItems}>Remove last item 
                 </button>
             </div>
         )
