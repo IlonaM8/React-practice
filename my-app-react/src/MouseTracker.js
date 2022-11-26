@@ -17,7 +17,6 @@ export class MouseTracker extends React.Component{
     render(){
         return(
             <div onMouseMove={this.handlerMouseMove}>{this.props.render(this.state.position)}
-
             </div>
         )
     }

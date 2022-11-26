@@ -17,7 +17,10 @@ import { TodoList } from './TodoList';
 import { TodoListpractice } from './TodoListpractice';
 import { Container } from './Container';
 import { MouseTracker } from './MouseTracker';
+import { Wrapper } from './Wrapper';
 // import { EnhancedMousePositionViewer} from './MousePositionViewer';
+import { Counter1 } from './Counter1';
+import {Counter2 } from './Counter2';
 
 
 const todos = [
@@ -66,18 +69,41 @@ export class App extends React.Component{
                 <MyList names={['Billy', 'Kate', 'Jane']} />
                 <MyTodos todos={todos}  />
                 <TodoList items={['Sleep', 'Eat', 'Walk the cat', 'Workout', 'Code', 'Study React']} />
-                <TodoListpractice />
-               
-        
+                
+
+
+                <TodoListpractice render={(items, handleDelete)=>{
+                    return(
+                        <div>
+                            {items.map((item, index )=> <li key={index}>{item}<button onClick={handleDelete.bind(this, index)}>Delete</button></li>)} 
+                            
+                        </div>
+                    )
+                }}
+                />
 
                 <MouseTracker 
                     render={ position =>{
                         const [x, y] = position
                         return(
-                            <div>The current position is: {x}, {y} </div>
+                            <div><h3>Made with Render props</h3>
+                            The current position is: {x}, {y} </div>
                         )
                     }}
+
                 ></MouseTracker>
+
+                <Wrapper render={ (count, incCount)=> {
+                                  return <Counter1 count={count} incCount={incCount} />
+
+                                }}
+                />
+
+
+                <Wrapper render={ (count, incCount) =>{
+                                   return <Counter2 count={count} incCount={incCount}/>
+                                 }}
+                />
             </Container>
         )
 

@@ -17,11 +17,16 @@ export class TodoListpractice extends React.Component{
 
 
     render(){
-        const items = this.state.items.map((item, index )=> <li key={index}>{item}<button onClick={this.handleDelete.bind(this, index)}>Delete</button></li>)
+        //const items = this.state.items.map((item, index )=> <li key={index}>{item}<button onClick={this.handleDelete.bind(this, index)}>Delete</button></li>)
         return(
             <div>
-                <h1>Hello there, this is my TodoList for List-06</h1>
-                <ul>{items}</ul>
+                {/* <h1>Hello there, this is my TodoList for List-06</h1> */}
+                {/* <ul>{items}</ul> */}
+                {/* <ul>{this.state.items.map((item, index )=> <li key={index}>{item}<button onClick={this.handleDelete.bind(this, index)}>Delete</button></li>)}</ul> */}
+               
+
+               <h3>Hello there, this is made with Render props</h3>
+                {this.props.render(this.state.items, this.handleDelete)}
             </div>
         )
     }
