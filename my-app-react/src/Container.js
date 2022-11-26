@@ -5,6 +5,7 @@ export class Container extends React.Component{
             <div className='container'>
                 <div className='container-title'>
                 {this.props.title}
+
                 </div>
                 <p className='p-text'>Green is my favorite color</p>
               
