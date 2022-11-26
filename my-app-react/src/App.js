@@ -21,6 +21,8 @@ import { Wrapper } from './Wrapper';
 // import { EnhancedMousePositionViewer} from './MousePositionViewer';
 import { Counter1 } from './Counter1';
 import {Counter2 } from './Counter2';
+import { DisplayLanguage } from './DisplayLanguage';
+import { LanguageContext } from './LanguageContext';
 
 
 const todos = [
@@ -40,7 +42,14 @@ export class App extends React.Component{
 
     this.state = {
         incrementBy: 10,
+        language: 'en'
     }
+   }
+
+   handleLanguageChange = (event) =>{
+    this.setState({
+        language: event.target.value
+    })
    }
    
    //esercizio 1:1
@@ -53,58 +62,80 @@ export class App extends React.Component{
 
     render(){
         return (
-            <Container title={<h1>Welcome to my first React App</h1>}>
-                < HelloWorld />
-                < Welcome name="John" />
-                <Clock />
-                <button onClick={this.myFun.bind(this)}>Click me</button>
-                < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/>
-                <ClickCounter />
-                <ClickTracker/>
-                <InteractiveWelcome />
-                <MyForm />
-                <Login />
-                <UncontrolledForm />
-                <UncontrolledLogin />
-                <MyList names={['Billy', 'Kate', 'Jane']} />
-                <MyTodos todos={todos}  />
-                <TodoList items={['Sleep', 'Eat', 'Walk the cat', 'Workout', 'Code', 'Study React']} />
-                
+            <div>
+                    <Container title={<h1>Welcome to my first React App</h1>}>
+                        < HelloWorld />
+                        < Welcome name="John" />
+                        <Clock />
+                        <button onClick={this.myFun.bind(this)}>Click me</button>
+                        < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/>
+                        <ClickCounter />
+                        <ClickTracker/>
+                        <InteractiveWelcome />
+                        <MyForm />
+                        <Login />
+                        <UncontrolledForm />
+                        <UncontrolledLogin />
+                        <MyList names={['Billy', 'Kate', 'Jane']} />
+                        <MyTodos todos={todos}  />
+                        <TodoList items={['Sleep', 'Eat', 'Walk the cat', 'Workout', 'Code', 'Study React']} />
+                        
 
 
-                <TodoListpractice render={(items, handleDelete)=>{
-                    return(
-                        <div>
-                            {items.map((item, index )=> <li key={index}>{item}<button onClick={handleDelete.bind(this, index)}>Delete</button></li>)} 
-                            
-                        </div>
-                    )
-                }}
-                />
+                        <TodoListpractice render={(items, handleDelete)=>{
+                            return(
+                                <div>
+                                    {items.map((item, index )=> <li key={index}>{item}<button onClick={handleDelete.bind(this, index)}>Delete</button></li>)} 
+                                    
+                                </div>
+                            )
+                        }}
+                        />
 
-                <MouseTracker 
-                    render={ position =>{
-                        const [x, y] = position
-                        return(
-                            <div><h3>Made with Render props</h3>
-                            The current position is: {x}, {y} </div>
-                        )
-                    }}
+                        <MouseTracker 
+                            render={ position =>{
+                                const [x, y] = position
+                                return(
+                                    <div><h3>Made with Render props</h3>
+                                    The current position is: {x}, {y} </div>
+                                )
+                            }}
 
-                ></MouseTracker>
+                        ></MouseTracker>
 
-                <Wrapper render={ (count, incCount)=> {
-                                  return <Counter1 count={count} incCount={incCount} />
+                        <Wrapper render={ (count, incCount)=> {
+                                        return <Counter1 count={count} incCount={incCount} />
 
-                                }}
-                />
+                                        }}
+                        />
 
 
-                <Wrapper render={ (count, incCount) =>{
-                                   return <Counter2 count={count} incCount={incCount}/>
-                                 }}
-                />
-            </Container>
+                        <Wrapper render={ (count, incCount) =>{
+                                        return <Counter2 count={count} incCount={incCount}/>
+                                        }}
+                        />
+
+                   <span>Here is the language selection: </span>
+                    <select value={this.state.value} onChange={this.handleLanguageChange}>
+                        <option value="en">English</option>
+                        <option value="it">Italiano</option>
+                        <option value="no">Norwegian</option>
+                    </select>
+                    <LanguageContext.Provider value={this.state.language}>
+                         <DisplayLanguage />
+                    </LanguageContext.Provider>
+                   
+
+                   
+
+                    </Container>
+
+                    
+
+
+            </div>
+
+            
         )
 
     }
