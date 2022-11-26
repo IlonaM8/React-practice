@@ -12,12 +12,15 @@
 
 .container-title{
     background-color: white;
-    border: 0.5px red solid;
+    border-radius: 20px;
+    border: 2px rgb(121, 233, 122) solid;
     text-align: center;
-    padding: 20px;
+    padding: 40px;
     color: green;
 }
 
 .p-text{
     text-align: center;
+    font-size: 14px;
+
 }
