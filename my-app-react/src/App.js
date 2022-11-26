@@ -15,6 +15,7 @@ import { MyList } from './MyList';
 import { MyTodos } from './MyTodos';
 import { TodoList } from './TodoList';
 import { TodoListpractice } from './TodoListpractice';
+import { Container } from './Container';
 
 
 const todos = [
@@ -47,7 +48,7 @@ export class App extends React.Component{
 
     render(){
         return (
-            <div className='container'>
+            <Container title={<h1>Welcome to my first React App</h1>}>
                 < HelloWorld />
                 < Welcome name="John" />
                 <Clock />
@@ -64,9 +65,7 @@ export class App extends React.Component{
                 <MyTodos todos={todos}  />
                 <TodoList items={['Sleep', 'Eat', 'Walk the cat', 'Workout', 'Code', 'Study React']} />
                 <TodoListpractice />
-               
-
-            </div>
+            </Container>
         )
 
     }
