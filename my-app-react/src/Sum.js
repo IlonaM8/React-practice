@@ -6,7 +6,7 @@ export function Sum({ numbers }){
     return(
         <div>
                
-            <h1>Here is the sum of all numbers in the array "numbers" you passed as prop:  
+            <h1>Here is the sum of all numbers in the array "numbers":  
                  {numbers.reduce((result, number)=> result + number)}
             </h1>
         </div>
