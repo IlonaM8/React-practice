@@ -127,7 +127,7 @@ export class App extends React.Component{
                     </LanguageContext.Provider>
                      
                      
-                     <Sum numbers={[1, 1, 1, 2, 4 ,2]} />
+                     <Sum />
                    
 
                    
