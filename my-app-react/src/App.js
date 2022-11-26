@@ -23,6 +23,7 @@ import { Counter1 } from './Counter1';
 import {Counter2 } from './Counter2';
 import { DisplayLanguage } from './DisplayLanguage';
 import { LanguageContext } from './LanguageContext';
+import { Sum } from './Sum';
 
 
 const todos = [
@@ -124,6 +125,9 @@ export class App extends React.Component{
                     <LanguageContext.Provider value={this.state.language}>
                          <DisplayLanguage />
                     </LanguageContext.Provider>
+                     
+                     
+                     <Sum numbers={[1, 1, 1, 2, 4 ,2]} />
                    
 
                    
