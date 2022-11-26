@@ -3,7 +3,6 @@
 import React from 'react'
 
 export function Sum(props){
-    //const sum = numbers.reduce((result, number)=> result + number);
     return(
         <div>
                
