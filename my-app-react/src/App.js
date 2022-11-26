@@ -16,6 +16,8 @@ import { MyTodos } from './MyTodos';
 import { TodoList } from './TodoList';
 import { TodoListpractice } from './TodoListpractice';
 import { Container } from './Container';
+import { MouseTracker } from './MouseTracker';
+// import { EnhancedMousePositionViewer} from './MousePositionViewer';
 
 
 const todos = [
@@ -65,6 +67,17 @@ export class App extends React.Component{
                 <MyTodos todos={todos}  />
                 <TodoList items={['Sleep', 'Eat', 'Walk the cat', 'Workout', 'Code', 'Study React']} />
                 <TodoListpractice />
+               
+        
+
+                <MouseTracker 
+                    render={ position =>{
+                        const [x, y] = position
+                        return(
+                            <div>The current position is: {x}, {y} </div>
+                        )
+                    }}
+                ></MouseTracker>
             </Container>
         )
 
