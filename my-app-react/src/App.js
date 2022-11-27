@@ -1,7 +1,7 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import { Clock } from './Clock';
-import { Counter } from './Counter';
+// import { Counter } from './Counter';
 import { HelloWorld } from "./Hello";
 import { Welcome } from './Welcome';
 import { ClickCounter } from './ClickCounter';
@@ -21,8 +21,8 @@ import { Wrapper } from './Wrapper';
 // import { EnhancedMousePositionViewer} from './MousePositionViewer';
 import { Counter1 } from './Counter1';
 import {Counter2 } from './Counter2';
-import { DisplayLanguage } from './DisplayLanguage';
-import { LanguageContext } from './LanguageContext';
+// import { DisplayLanguage } from './DisplayLanguage';
+// import { LanguageContext } from './LanguageContext';
 import { Sum } from './Sum';
 import { HookCounter } from './HookCounter';
 import { HookLogin } from './HookLogin';
@@ -40,39 +40,45 @@ const todos = [
 
 
 
-export class App extends React.Component{
-   constructor(props){
-    super(props)
 
-    this.state = {
-        incrementBy: 10,
-        language: 'en'
-    }
-   }
+//    constructor(props){
+//     super(props)
 
-   handleLanguageChange = (event) =>{
-    this.setState({
-        language: event.target.value
-    })
-   }
+//     this.state = {
+//         incrementBy: 10,
+//         language: 'en'
+//     }
+//    }
+
+//    handleLanguageChange = (event) =>{
+//     this.setState({
+//         language: event.target.value
+//     })
+//    }
    
-   //esercizio 1:1
-   myFun(){
-    console.log('ciao', this)
-    this.setState({ incrementBy: this.state.incrementBy + 1})
+//    //esercizio 1:1
+//    myFun(){
+//     console.log('ciao', this)
+//     this.setState({ incrementBy: this.state.incrementBy + 1})
     
-   }
+//    }
 
+//component converted to a function component
+    export function App(){
+        const [showCounter, setShowCounter] = useState(true) 
 
-    render(){
+        function handleToggleCounter(){
+            setShowCounter((s) => !s)
+        }
+        
         return (
             <div>
                     <Container title={<h1>Welcome to my first React App</h1>}>
                         < HelloWorld />
                         < Welcome name="John" />
                         <Clock />
-                        <button onClick={this.myFun.bind(this)}>Click me</button>
-                        < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/>
+                        {/* <button onClick={this.myFun.bind(this)}>Click me</button> */}
+                        {/* < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/> */}
                         <ClickCounter />
                         <ClickTracker/>
                         <InteractiveWelcome />
@@ -119,7 +125,7 @@ export class App extends React.Component{
                                         }}
                         />
 
-                   <span>Here is the language selection: </span>
+                   {/* <span>Here is the language selection: </span>
                     <select value={this.state.value} onChange={this.handleLanguageChange}>
                         <option value="en">English</option>
                         <option value="it">Italiano</option>
@@ -128,10 +134,14 @@ export class App extends React.Component{
                     <LanguageContext.Provider value={this.state.language}>
                          <DisplayLanguage />
                     </LanguageContext.Provider>
-                     
+                      */}
                      
                      <Sum />
-                     <HookCounter initialValue={10} />
+
+                     <button onClick={handleToggleCounter}>Toggle Counter</button> 
+                     {showCounter && <HookCounter initialValue={10} />}
+                    
+                    
                      <HookLogin />
                      <LoginUseState />
                    
@@ -149,6 +159,6 @@ export class App extends React.Component{
         )
 
     }
-}
+
 
 
