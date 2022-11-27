@@ -24,6 +24,7 @@ import {Counter2 } from './Counter2';
 import { DisplayLanguage } from './DisplayLanguage';
 import { LanguageContext } from './LanguageContext';
 import { Sum } from './Sum';
+import { HookCounter } from './HookCounter';
 
 
 const todos = [
@@ -128,6 +129,7 @@ export class App extends React.Component{
                      
                      
                      <Sum />
+                     <HookCounter initialValue={10} />
                    
 
                    
