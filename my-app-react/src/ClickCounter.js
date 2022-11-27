@@ -3,21 +3,31 @@ import React, {useEffect, useState} from "react";
 export function ClickCounter({initialValue = 0}){
     const [counter, setCounter] = useState(initialValue)
     
-   
-// this function is called by the useEffect
- function onCounterChange(){
-    console.log(`The counter is: ${counter}`)
- }
+  //useEffect with a side effect and a cleanup function
+  useEffect(() => {
+    console.log(`Hey everyone, the component has mounted!`)
+
+    return () =>{
+        console.log(`This is the clean up function, the component is about to be unmounted!`)
+    }
+  }, []) 
+
 
  //useEffect here 
     useEffect(() => {onCounterChange()}, [counter])
 
+    // this function is called by the useEffect
+    function onCounterChange(){
+        console.log(`The counter is: ${counter}`)
+    }
+
+    
 
     function handleCounterClick(){
         setCounter(c => c + 1)
 
     }
-
+  
 
 
     return(
@@ -25,6 +35,7 @@ export function ClickCounter({initialValue = 0}){
             
             <h2>This is made with the hook useState. Count: {counter}</h2>
             <button onClick={handleCounterClick}>Click here to increment</button>
+
         </div>
     )
 }

@@ -71,6 +71,14 @@ const todos = [
             setShowCounter((s) => !s)
         }
         
+
+       //on click hide counter 
+       function handleTogleCounter(){
+        setShowCounter((s) => !s)
+
+    }
+
+
         return (
             <div>
                     <Container title={<h1>Welcome to my first React App</h1>}>
@@ -79,7 +87,10 @@ const todos = [
                         <Clock />
                         {/* <button onClick={this.myFun.bind(this)}>Click me</button> */}
                         {/* < Counter  initialValue={10} timeout={1000}  incrementBy={this.state.incrementBy}/> */}
-                        <ClickCounter />
+                        
+                        <button onClick={handleTogleCounter}>Toggle Counter</button>
+                       {showCounter &&  <ClickCounter />}
+
                         <ClickTracker/>
                         <InteractiveWelcome />
                         <MyForm />
@@ -139,7 +150,7 @@ const todos = [
                      <Sum />
 
                      <button onClick={handleToggleCounter}>Toggle Counter</button> 
-                     {showCounter && <HookCounter initialValue={10} />}
+                     {showCounter && <HookCounter initialValue={3} />}
                     
                     
                      <HookLogin />
