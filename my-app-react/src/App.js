@@ -25,6 +25,8 @@ import { DisplayLanguage } from './DisplayLanguage';
 import { LanguageContext } from './LanguageContext';
 import { Sum } from './Sum';
 import { HookCounter } from './HookCounter';
+import { HookLogin } from './HookLogin';
+import { LoginUseState } from './LoginUseState';
 
 
 const todos = [
@@ -130,6 +132,8 @@ export class App extends React.Component{
                      
                      <Sum />
                      <HookCounter initialValue={10} />
+                     <HookLogin />
+                     <LoginUseState />
                    
 
                    
