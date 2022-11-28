@@ -28,6 +28,11 @@ import { HookCounter } from './HookCounter';
 import { HookLogin } from './HookLogin';
 import { LoginUseState } from './LoginUseState';
 
+// import { GithubUser } from './GithubUser';
+// import { GithubAsync } from './GihubAsync';
+import { GithubUser2 } from './GithubUser2';
+
+
 
 const todos = [
     {id: 1, title: "Buy Milk", completed: true}, 
@@ -155,6 +160,13 @@ const todos = [
                     
                      <HookLogin />
                      <LoginUseState />
+                     {/* <GithubUser username="ilonam8" />
+                     <GithubAsync username="ilonam8" /> */}
+
+                     <GithubUser2 username='ilonam8' />
+                     
+                    
+                     
                    
 
                    
