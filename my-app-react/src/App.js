@@ -80,6 +80,11 @@ const todos = [
     export function App(){
         const [showCounter, setShowCounter] = useState(true) 
 
+         //here I use again the hook counter
+    const {counter, onIncrement, onDecrement, onReset} = useCounter()
+
+    //making another custom hook for Githubusers
+    const [ username, setUsername] = useState('')
 
         function handleToggleCounter(){
             setShowCounter((s) => !s)
@@ -92,8 +97,7 @@ const todos = [
 
     }
  
-    //here I use again the hook counter
-    const {counter, onIncrement, onDecrement, onReset} = useCounter()
+   
 
 
 
@@ -175,10 +179,16 @@ const todos = [
                     
                      <HookLogin />
                      <LoginUseState />
-                     <GithubUser username="ilonam8" />
-                     <GithubAsync username="ilonam8" />
 
-                     <GithubUser2 username='ilonam8' />
+                    
+                     <GithubUser username="ilonam8" />
+                     <GithubAsync username={username}  />
+                     <div>
+                        <h3>Find a Github user</h3>
+                        <input value={username} onChange={(e) => setUsername(e.target.value)} />
+                     </div>
+                     
+                     <GithubUser2 username={username} />
                      {/* <GithubUserList /> */}
                      <CustomHookCounter />
  
@@ -191,6 +201,8 @@ const todos = [
                     </div>
                     
                     <ControlledFormHook />
+
+                    
                     
 
 
