@@ -27,11 +27,17 @@ import { Sum } from './Sum';
 import { HookCounter } from './HookCounter';
 import { HookLogin } from './HookLogin';
 import { LoginUseState } from './LoginUseState';
-import { GithubUserList } from './GithubUserList';
+// import { GithubUserList } from './GithubUserList';
 
 // import { GithubUser } from './GithubUser';
 // import { GithubAsync } from './GihubAsync';
-import { GithubUser2 } from './GithubUser2';
+// import { GithubUser2 } from './GithubUser2';
+
+import { CustomHookCounter } from './CustomHookCounter';
+import { useCounter } from './useCounter';
+
+
+
 
 
 
@@ -73,6 +79,7 @@ const todos = [
     export function App(){
         const [showCounter, setShowCounter] = useState(true) 
 
+
         function handleToggleCounter(){
             setShowCounter((s) => !s)
         }
@@ -83,6 +90,12 @@ const todos = [
         setShowCounter((s) => !s)
 
     }
+ 
+    //here I use again the hook counter
+    const {counter, onIncrement, onDecrement, onReset} = useCounter()
+
+
+
 
 
         return (
@@ -164,12 +177,21 @@ const todos = [
                      {/* <GithubUser username="ilonam8" />
                      <GithubAsync username="ilonam8" /> */}
 
-                     <GithubUser2 username='ilonam8' />
-                     <GithubUserList />
-                     
+                     {/* <GithubUser2 username='ilonam8' /> */}
+                     {/* <GithubUserList /> */}
+                     <CustomHookCounter />
+ 
+
+                    <div>
+                        <h4>I use the counter logic from a custom hook: {counter}</h4>
+                        <button onClick={onIncrement}>Ingrement</button>
+                        <button onClick={onDecrement}>Decrement</button>
+                        <button onClick={onReset}>Reset</button>
+                    </div>
                     
-                     
-                   
+                    
+
+
 
                    
 
