@@ -35,6 +35,7 @@ import { LoginUseState } from './LoginUseState';
 
 import { CustomHookCounter } from './CustomHookCounter';
 import { useCounter } from './useCounter';
+import { ControlledFormHook } from './ControlledFormHook';
 
 
 
@@ -189,6 +190,7 @@ const todos = [
                         <button onClick={onReset}>Reset</button>
                     </div>
                     
+                    <ControlledFormHook />
                     
 
 
