@@ -29,9 +29,9 @@ import { HookLogin } from './HookLogin';
 import { LoginUseState } from './LoginUseState';
 // import { GithubUserList } from './GithubUserList';
 
-// import { GithubUser } from './GithubUser';
-// import { GithubAsync } from './GihubAsync';
-// import { GithubUser2 } from './GithubUser2';
+import { GithubUser } from './GithubUser';
+import { GithubAsync } from './GihubAsync';
+import { GithubUser2 } from './GithubUser2';
 
 import { CustomHookCounter } from './CustomHookCounter';
 import { useCounter } from './useCounter';
@@ -175,10 +175,10 @@ const todos = [
                     
                      <HookLogin />
                      <LoginUseState />
-                     {/* <GithubUser username="ilonam8" />
-                     <GithubAsync username="ilonam8" /> */}
+                     <GithubUser username="ilonam8" />
+                     <GithubAsync username="ilonam8" />
 
-                     {/* <GithubUser2 username='ilonam8' /> */}
+                     <GithubUser2 username='ilonam8' />
                      {/* <GithubUserList /> */}
                      <CustomHookCounter />
  
