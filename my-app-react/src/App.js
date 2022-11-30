@@ -38,6 +38,7 @@ import { useCounter } from './useCounter';
 import { ControlledFormHook } from './ControlledFormHook';
 import WelcomeuseRef  from './WelcomeuseRef';
 import { DisplayLanguage2 } from './DisplayLanguage2';
+import { CounterUseCallback } from './CounterUseCallback';
 
 
 
@@ -228,6 +229,7 @@ const todos = [
                          <WelcomeuseRef />
                          <DisplayLanguage2 />
                      </LanguageContext.Provider>
+                     <CounterUseCallback/>
 
                     
                     
