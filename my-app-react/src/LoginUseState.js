@@ -1,11 +1,16 @@
 
-import React, { useState} from 'react';
+import React, { useState, useEffect, useRef} from 'react';
 
 
 export function LoginUseState(){
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [remember, setRemember] = useState(false)
+
+    //here is the useRef
+    const usernameRef = useRef()
+
+   
 
 
  //function for onChange di username
@@ -31,9 +36,14 @@ function onLogin(){
 
 }
 
+    //use effect for useRef 
+    useEffect(() =>{
+        usernameRef.current.focus()
+    }, [])
+
     return(
         <div>
-            <h3>Here is the Login as a function Component</h3>
+            <h3>Here is the Login as a function Component!!!!!</h3>
             
             <button 
                    type='button' 
@@ -42,6 +52,7 @@ function onLogin(){
             </button>
             
          <input 
+            ref={usernameRef}
             name='username' 
             value={username} 
             onChange={handleUsernameChange}>
