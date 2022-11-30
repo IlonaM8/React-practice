@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
+import { DisplayLanguage2 } from './DisplayLanguage2';
 
 export default function WelcomeuseRef() {
     const [ name, setName ] = useState('World')
@@ -15,10 +16,11 @@ export default function WelcomeuseRef() {
         setName(event.target.value)
     }
 
-   
+   //inside the return we call the displaylanguage componenet - remember to put welcome inside the provider in APP
 
   return (
     <div>
+      <DisplayLanguage2 /> 
         <h2>Welcome with useRef</h2>
         <p>Hello, {name}</p>
         <input ref={inputRef} value={name} onChange={handleNameChange}/> 

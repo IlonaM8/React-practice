@@ -22,7 +22,7 @@ import { Wrapper } from './Wrapper';
 import { Counter1 } from './Counter1';
 import {Counter2 } from './Counter2';
 // import { DisplayLanguage } from './DisplayLanguage';
-// import { LanguageContext } from './LanguageContext';
+import { LanguageContext } from './LanguageContext';
 import { Sum } from './Sum';
 import { HookCounter } from './HookCounter';
 import { HookLogin } from './HookLogin';
@@ -36,7 +36,8 @@ import { GithubUser2 } from './GithubUser2';
 import { CustomHookCounter } from './CustomHookCounter';
 import { useCounter } from './useCounter';
 import { ControlledFormHook } from './ControlledFormHook';
-// import WelcomeuseRef  from './WelcomeuseRef';
+import WelcomeuseRef  from './WelcomeuseRef';
+import { DisplayLanguage2 } from './DisplayLanguage2';
 
 
 
@@ -87,6 +88,16 @@ const todos = [
     //making another custom hook for Githubusers
     const [ username, setUsername] = useState('')
 
+
+    //language contex useState
+    const [ language, setLanguage] = useState('en')
+
+    //handle change function
+    function handleChangeLanguage(event){
+        setLanguage(event.target.value)
+
+    }
+
         function handleToggleCounter(){
             setShowCounter((s) => !s)
         }
@@ -105,7 +116,7 @@ const todos = [
 
 
         return (
-            <div>
+            <div> 
                     <Container title={<h1>Welcome to my first React App</h1>}>
                         < HelloWorld />
                         < Welcome name="John" />
@@ -202,7 +213,21 @@ const todos = [
                     </div>
                     
                     <ControlledFormHook />
-                    {/* <WelcomeuseRef /> */}
+                   
+
+
+
+                    <h4>Here is the language selection:</h4>
+                    <select value={language} onChange={handleChangeLanguage}>
+                        <option value="en">English</option>
+                        <option value="it">Italiano</option>
+                        <option value="no">Norwegian</option>
+                    </select>
+
+                    <LanguageContext.Provider value={language}>
+                         <WelcomeuseRef />
+                         <DisplayLanguage2 />
+                     </LanguageContext.Provider>
 
                     
                     
