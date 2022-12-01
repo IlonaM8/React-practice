@@ -1,12 +1,16 @@
 import React from 'react'
+ import { useParams } from 'react-router-dom'
 import { Age } from './Age'
 
 
 //the same component written as a function component:
 
 export function Welcome(props){
+    const { name = 'World' } = useParams() 
     return(
         <div>
+            <h1>Hello, {name}</h1>
+            <p>From react roote exercise</p>
             {props.name === 'John' && props.age < 65 && props.age > 18 ? <p>Your age is: {props.age}</p> :  null}
             {props.name && <h4>Hello, {props.name}!</h4>}
             {<Age age={26}/>}
