@@ -1,12 +1,19 @@
 import React from 'react'
 import { Container } from './Container';
-import { Routes, Route }  from 'react-router-dom';
+import { Routes, Route, Link, useNavigate }  from 'react-router-dom';
 import { Welcome } from './Welcome';
 import { ClickCounter } from './ClickCounter';
 
 import { ShowGithubUser } from './ShowGithubUser';
 
 export function App2() {
+    //useNavigation hook - same API as the link component
+    const navigate = useNavigate()
+
+    function handlLobinButton(){
+        navigate("/login")
+
+    }
   return (
     <div>
        <Container title={<h3>Welcome to my App!</h3>}>
@@ -16,6 +23,14 @@ export function App2() {
             <Route path="/counter" element={<ClickCounter />} />
             <Route path= "users/:username" element={<ShowGithubUser />} />
         </Routes>
+
+          <ul>
+            <li><Link to="/">Go to Welcome</Link></li>
+            <li><Link to="/counter">Go to Couner</Link></li>
+            <li><Link to="users/:username">Go to Users Page</Link></li>
+          </ul>
+          <button onClick={handlLobinButton}>Go to login</button>
+
         </Container>
        
        

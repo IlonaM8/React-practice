@@ -1,5 +1,5 @@
 import React from 'react'
- import { useParams } from 'react-router-dom'
+ import { useParams, Link } from 'react-router-dom'
 import { Age } from './Age'
 
 
@@ -10,7 +10,7 @@ export function Welcome(props){
     return(
         <div>
             <h1>Hello, {name}</h1>
-            <p>From react roote exercise</p>
+            <p>From react Router exercise</p>
             {props.name === 'John' && props.age < 65 && props.age > 18 ? <p>Your age is: {props.age}</p> :  null}
             {props.name && <h4>Hello, {props.name}!</h4>}
             {<Age age={26}/>}
