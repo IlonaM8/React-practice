@@ -12,7 +12,7 @@ import { useMemo } from "react";
     ]
 
 export function FilteredList() {
-    //use memo here
+    //use Meme :D here
     const resultMemo = useMemo(() => {
         return filtermyObj(objectList)
     }, [])
