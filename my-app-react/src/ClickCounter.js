@@ -14,7 +14,7 @@ export function ClickCounter({initialValue = 0}){
 
 
  //useEffect here 
-    useEffect(() => {onCounterChange()}, [counter])
+    useEffect(() => {onCounterChange()}, [counter]) 
 
     // this function is called by the useEffect
     function onCounterChange(){

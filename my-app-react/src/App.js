@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { Routes, Route }  from 'react-router-dom';
 
 import { Clock } from './Clock';
@@ -40,6 +40,7 @@ import { ControlledFormHook } from './ControlledFormHook';
 import WelcomeuseRef  from './WelcomeuseRef';
 import { DisplayLanguage2 } from './DisplayLanguage2';
 import { CounterUseCallback } from './CounterUseCallback';
+import { FilteredList } from './FilteredList';
 
 
 
@@ -93,6 +94,8 @@ const todos = [
 
     //language contex useState
     const [ language, setLanguage] = useState('en')
+
+
 
     //handle change function
     function handleChangeLanguage(event){
@@ -231,11 +234,12 @@ const todos = [
                          <DisplayLanguage2 />
                      </LanguageContext.Provider>
                      <CounterUseCallback/>
+                     <FilteredList />
+                    
 
                      <Routes>
                         <Route path="/:name" element={<Welcome />} />
                         <Route path='/login' element={<Login />} />
-
                      </Routes>
 
                     
