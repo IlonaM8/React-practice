@@ -7,7 +7,7 @@ import { useCallback, useState } from 'react'
     const [ counter, setCounter] = useState(initialValue)
 
  //usecallback to save the result of the function in cache the first time our component renders
-    const handleCounterIncrement = useCallback( function handleCounterIncrement(){
+    const handleCounterIncrement = useCallback(function handleCounterIncrement(){
         setCounter(c => c + 1) 
     }, [])
 

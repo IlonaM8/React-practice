@@ -14,12 +14,13 @@ export function ClickCounter({initialValue = 0}){
 
 
  //useEffect here 
-    useEffect(() => {onCounterChange()}, [counter]) 
+    // useEffect(() => {onCounterChange()}, [counter]) 
+    //Line 17:42:  React Hook useEffect has a missing dependency: 'onCounterChange'. Either include it or remove the dependency array  react-hooks/exhaustive-deps
 
     // this function is called by the useEffect
-    function onCounterChange(){
-        console.log(`The counter is: ${counter}`)
-    }
+    // function onCounterChange(){
+    //     console.log(`The counter is: ${counter}`)
+    // }
 
     
 

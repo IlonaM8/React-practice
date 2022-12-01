@@ -1,10 +1,12 @@
 import { BrowserRouter } from 'react-router-dom'
 import { App } from './App'
+import { App2 } from './App2'
 
 export function Root(){
     return(
         <BrowserRouter>
         <App/>
+        <App2/>
         </BrowserRouter>
     )
 }

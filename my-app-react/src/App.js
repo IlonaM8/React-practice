@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState } from 'react';
 import { Routes, Route }  from 'react-router-dom';
 
 import { Clock } from './Clock';
@@ -111,15 +111,8 @@ const todos = [
        //on click hide counter 
        function handleTogleCounter(){
         setShowCounter((s) => !s)
-
     }
  
-   
-
-
-
-
-
         return (
             <div> 
                     <Container title={<h1>Welcome to my first React App</h1>}>
@@ -238,8 +231,9 @@ const todos = [
                     
 
                      <Routes>
+                        <Route path="/" element={<Welcome />} />
                         <Route path="/:name" element={<Welcome />} />
-                        <Route path='/login' element={<Login />} />
+                        <Route path="/login" element={<Login />} />
                      </Routes>
 
                     
