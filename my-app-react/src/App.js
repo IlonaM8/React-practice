@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Routes, Route }  from 'react-router-dom';
 
 import { Clock } from './Clock';
 // import { Counter } from './Counter';
@@ -230,6 +231,12 @@ const todos = [
                          <DisplayLanguage2 />
                      </LanguageContext.Provider>
                      <CounterUseCallback/>
+
+                     <Routes>
+                        <Route path="/:name" element={<Welcome />} />
+                        <Route path='/login' element={<Login />} />
+
+                     </Routes>
 
                     
                     
