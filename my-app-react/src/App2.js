@@ -5,6 +5,7 @@ import { Welcome } from './Welcome';
 import { ClickCounter } from './ClickCounter';
 
 import { ShowGithubUser } from './ShowGithubUser';
+import { GithubUserList } from './GithubUserList';
 
 export function App2() {
     //useNavigation hook - same API as the link component
@@ -21,11 +22,15 @@ export function App2() {
         <Routes>
             <Route path="/" element={<Welcome name="John" />}/>
             <Route path="/counter" element={<ClickCounter />} />
-            <Route path= "users/:username" element={<ShowGithubUser />} />
+
+            <Route path='users' element={<GithubUserList />}>
+                  <Route path='username' element={<ShowGithubUser />} />
+            </Route>
+            {/* <Route path= "users/:username" element={<ShowGithubUser />} /> */}
             <Route path="*" element={<div><p>Page Not Found</p>
                                <Link to="/">Go Home!</Link>
                                </div>} 
-                            />
+                 />
         </Routes>
 
           <ul>
@@ -34,6 +39,9 @@ export function App2() {
             <li><Link to="users/:username">Go to Users Page</Link></li>
           </ul>
           <button onClick={handlLobinButton}>Go to login</button>
+
+         
+          
 
         </Container>
        
