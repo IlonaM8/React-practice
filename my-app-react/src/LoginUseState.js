@@ -34,7 +34,7 @@ function handleRememberChange(event){
 function onLogin(){
     console.log({username, password, remember});
 
-}
+} 
 
     //use effect for useRef 
     useEffect(() =>{

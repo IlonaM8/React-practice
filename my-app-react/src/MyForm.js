@@ -67,7 +67,7 @@ export class MyForm extends React.Component{
         console.log(this.state) //print my current state in the console
     }
 
-
+ 
     render(){
         return(
             <div>

@@ -16,7 +16,7 @@ export class UncontrolledLogin extends React.Component{
         password,
         remember
     })
- }
+ } 
 
  handleFormPrefill = () =>{
     this._formRef.current.elements.username.value = 'Sean'

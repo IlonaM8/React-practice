@@ -1,11 +1,12 @@
 import React from 'react'
- import { useParams, Link } from 'react-router-dom'
+ import { useParams } from 'react-router-dom'
 import { Age } from './Age'
 
 
 //the same component written as a function component:
 
 export function Welcome(props){
+    //use Param hook - we know that the path expects a parameter
     const { name = 'World' } = useParams() 
     return(
         <div>

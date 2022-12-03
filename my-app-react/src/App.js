@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Routes, Route }  from 'react-router-dom';
+import { Routes, Route, Link }  from 'react-router-dom';
 
 import { Clock } from './Clock';
 // import { Counter } from './Counter';
@@ -41,6 +41,8 @@ import WelcomeuseRef  from './WelcomeuseRef';
 import { DisplayLanguage2 } from './DisplayLanguage2';
 import { CounterUseCallback } from './CounterUseCallback';
 import { FilteredList } from './FilteredList';
+import { Catalogue } from './Catalogue';
+import { Product } from './Product';
 
 
 
@@ -115,7 +117,15 @@ const todos = [
  
         return (
             <div> 
-                    <Container title={<h1>Welcome to my first React App</h1>}>
+                    <Container title={
+                                    <div>
+                                    <h1>Welcome to my first React App</h1>
+                                    <div>
+                                        <Link to="/">Home</Link> | <Link to="products">Products</Link>
+                                    </div>
+                                    </div>
+                                }
+                             >
                         < HelloWorld />
                         < Welcome name="John" />
                         <Clock />
@@ -232,8 +242,16 @@ const todos = [
 
                      <Routes>
                         <Route path="/" element={<Welcome />} />
-                        <Route path='/:name' element={<Welcome />} />
-                        <Route path="/login" element={<Login />} />
+                        {/* <Route path='/:name' element={<Welcome />} /> */}
+                        {/* <Route path="/login" element={<Login />} /> */}
+                        <Route path='products' element={<Catalogue/>}>
+                            <Route index element={<p>Please select a product</p>} />
+                            <Route path=":id" element={<Product />}/>
+                        </Route>
+                        <Route path="*" element={<div><p>Not found</p>
+                               <Link to="/">Go Home</Link>
+                               </div>} 
+                            />
                      </Routes>
 
                     
