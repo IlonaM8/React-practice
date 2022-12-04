@@ -1,14 +1,15 @@
-
+import {useParams} from 'react-router-dom'
 import { useGithubUser } from './useGithubUser';
 
 
 //this is my component
-export function GithubAsync({username}){
+export function GithubAsync(){
+    const {username} = useParams()
     const {data, error, loading, onFetchUser } = useGithubUser(username)
     
 
     function handleGetUserData(){
-        onFetchUser(username)
+        onFetchUser()
     }
 
     return(

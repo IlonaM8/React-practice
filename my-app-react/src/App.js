@@ -43,6 +43,7 @@ import { CounterUseCallback } from './CounterUseCallback';
 import { FilteredList } from './FilteredList';
 import { Catalogue } from './Catalogue';
 import { Product } from './Product';
+import GitHubUsersSWR from './GitHubUsersSWR';
 
 
 
@@ -121,7 +122,7 @@ const todos = [
                                     <div>
                                     <h1>Welcome to my first React App</h1>
                                     <div>
-                                        <Link to="/">Home</Link> | <Link to="products">Products</Link>
+                                        <Link to="/">Home</Link> | <Link to="products">Products</Link> | <Link to="githubusers">GitHub Users</Link>
                                     </div>
                                     </div>
                                 }
@@ -252,6 +253,10 @@ const todos = [
                                <Link to="/">Go Home</Link>
                                </div>} 
                             />
+                        <Route path='githubusers' element={<GitHubUsersSWR />}> 
+                               <Route path=':username' element={<GithubAsync />} />
+                        </Route>
+
                      </Routes>
 
                     

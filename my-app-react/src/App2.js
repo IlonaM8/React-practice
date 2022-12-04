@@ -13,7 +13,6 @@ export function App2() {
 
     function handlLobinButton(){
         navigate("/login")
-
     }
   return (
     <div>
