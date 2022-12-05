@@ -36,6 +36,7 @@ import { GithubUser2 } from './GithubUser2';
 import { CustomHookCounter } from './CustomHookCounter';
 import { useCounter } from './useCounter';
 import { ControlledFormHook } from './ControlledFormHook';
+import { CarDetails } from './CarDetails';
 // import WelcomeuseRef  from './WelcomeuseRef';
 
 
@@ -203,6 +204,7 @@ const todos = [
                     
                     <ControlledFormHook />
                     {/* <WelcomeuseRef /> */}
+                    <CarDetails />
 
                     
                     
