@@ -5,7 +5,7 @@ import { GithubUser } from './GithubUser';
 
 export function GithubUserList(){
     const [data, setData] = useState({
-        inputData: "",
+        inputData: '',
         usernames: [],
       });
 
@@ -27,7 +27,7 @@ export function GithubUserList(){
 
         setData((data) => {
           return {
-            inputData: "",
+            inputData: '',
             usernames: [...data.usernames, data.inputData],
           };
         });
