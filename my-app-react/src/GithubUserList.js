@@ -37,7 +37,7 @@ export function GithubUserList(){
     return(
         <div>
             
-            <h4>Search for a GitHub user by using the input field below</h4>
+            <h4>Search for a Github user by using the input field below</h4>
            
             <ul>
                 {data.usernames.map((username, index) => (
