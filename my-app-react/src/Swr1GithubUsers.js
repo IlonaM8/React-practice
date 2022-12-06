@@ -11,7 +11,7 @@ export default function Swr1GithubUsers(username) {
             {loading && <h1>Loading...</h1>}
             {error && <h1>There has been an error</h1>}
             {data &&<h1> This is called with SWR library: {data.name}</h1>}
-            <button onClick={onRefresh}>Refresh data</button>
+            <button onClick={onRefresh}>Refresh Data</button>
     </div>
   )
 }
