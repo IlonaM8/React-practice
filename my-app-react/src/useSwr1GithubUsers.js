@@ -6,10 +6,15 @@ const fetcher = url => fetch(url).then(response => response.json())
 export function useSwr1GithubUsers({username}) {
 
     
-    const { data, error } = useSWR( username !== null ? `https://api.github.com/users/${username}`: null, fetcher)
+    const { data, error, mutate } = useSWR( username !== null ? `https://api.github.com/users/${username}`: null, fetcher)
+
+    function handleRefresh(){
+        mutate()
+    }
   return {
     data, 
-    error
+    error,
+    onRefresh: handleRefresh
   }
 }
 
