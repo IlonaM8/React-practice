@@ -30,9 +30,9 @@ import { HookLogin } from './HookLogin';
 import { LoginUseState } from './LoginUseState';
 // import { GithubUserList } from './GithubUserList';
 
-import { GithubUser } from './GithubUser';
-import { GithubAsync } from './GihubAsync';
-import { GithubUser2 } from './GithubUser2';
+// import { GithubUser } from './GithubUser';
+// import { GithubAsync } from './GihubAsync';
+// import { GithubUser2 } from './GithubUser2';
 
 import { CustomHookCounter } from './CustomHookCounter';
 import { useCounter } from './useCounter';
@@ -202,14 +202,14 @@ const todos = [
                      <LoginUseState />
 
                     
-                     <GithubUser username="ilonam8" />
-                     <GithubAsync username={username}  />
+                     {/* <GithubUser username="ilonam8" />
+                     <GithubAsync username={username}  /> */}
                      <div>
                         <h3>Find a Github user</h3>
                         <input value={username} onChange={(e) => setUsername(e.target.value)} />
                      </div>
                      
-                     <GithubUser2 username={username} />
+                     {/* <GithubUser2 username={username} /> */}
                      {/* <GithubUserList /> */}
                      <CustomHookCounter />
  
@@ -253,9 +253,9 @@ const todos = [
                                <Link to="/">Go Home</Link>
                                </div>} 
                             />
-                        <Route path='githubusers' element={<GitHubUsersSWR />}> 
+                        {/* <Route path='githubusers' element={<GitHubUsersSWR />}> 
                                <Route path=':username' element={<GithubAsync />} />
-                        </Route>
+                        </Route> */}
 
                      </Routes>
 

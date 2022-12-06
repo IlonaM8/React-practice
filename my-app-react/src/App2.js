@@ -6,6 +6,10 @@ import { ClickCounter } from './ClickCounter';
 
 import { ShowGithubUser } from './ShowGithubUser';
 import { GithubUserList } from './GithubUserList';
+import GithubUserss from './GithubUserss';
+import Swr1GithubUsers from './Swr1GithubUsers';
+
+
 
 export function App2() {
     //useNavigation hook - same API as the link component
@@ -31,14 +35,19 @@ export function App2() {
                                <Link to="/">Go Home!</Link>
                                </div>} 
                  />
+            <Route path='githubusers' element={<GithubUserss />}></Route>     
         </Routes>
 
           <ul>
             <li><Link to="/">Go to Welcome</Link></li>
             <li><Link to="/counter">Go to Couner</Link></li>
             <li><Link to="users/:username">Go to Users Page</Link></li>
+            <li><Link to="githubusers">Go to GithubUsers Page</Link></li>
           </ul>
           <button onClick={handlLobinButton}>Go to login</button>
+
+          <Swr1GithubUsers username="ilonam8" />
+
 
          
           
